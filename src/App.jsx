@@ -25,7 +25,7 @@ export default function App() {
       <header className="h-[140px] border-b-4 border-neon-yellow flex items-end px-10 pb-6 justify-between bg-panel-bg z-50">
         <div className="cursor-pointer select-none" onClick={() => setSelectedGame(null)}>
           <h1 className="text-8xl font-black italic tracking-tighter leading-none text-neon-yellow">
-            PORTAL.
+            THE COOL PLACE.
           </h1>
           <p className="font-mono text-xs uppercase tracking-[0.3em] opacity-60 mt-2">
             // Unblocked Games & Social Hub
@@ -174,14 +174,16 @@ export default function App() {
       {/* Footer */}
       <footer className="h-12 border-t border-zinc-800 bg-black flex items-center px-10 justify-between font-mono text-[10px] text-zinc-500 uppercase tracking-wider">
         <div className="flex items-center gap-4">
-          <span>STATUS: <span className="text-green-500">ALL SYSTEMS NOMINAL</span></span>
+          <span className="text-neon-yellow font-bold">THE COOL PLACE //</span>
+          <span>STATUS: <span className="text-green-500 font-bold">ALL SYSTEMS NOMINAL</span></span>
           <span className="opacity-20">|</span>
           <span>LOCATION: US-EAST-1</span>
         </div>
         <div className="flex gap-6">
-          <span>ONLINE: 1,482</span>
+          <span>ACTIVE_SESSIONS: 1,482</span>
           <span>PING: 24MS</span>
-          <span>REV: 0.4.1</span>
+          <span>ENCRYPTION: AES-256</span>
+          <span className="text-zinc-700">COORD: 40.7128° N, 74.0060° W</span>
         </div>
       </footer>
     </div>
