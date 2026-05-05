@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+@theme {
+  --color-neon-yellow: #E0FF00;
+  --color-app-bg: #0A0A0A;
+  --color-panel-bg: #0F0F0F;
+  --color-border-dark: #1A1A1A;
+}
