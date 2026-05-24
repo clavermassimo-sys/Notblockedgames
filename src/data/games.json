@@ -2,43 +2,177 @@
   {
     "id": "slope",
     "name": "Slope",
-    "description": "Navigate a ball through a 3D course.",
+    "category": "action",
+    "description": "Navigate a ball through a 3D obstacle course at breakneck speeds.",
     "thumbnail": "https://images.unsplash.com/photo-1614294149010-950b698f72c0?w=400&h=250&fit=crop",
     "iframeUrl": "https://slopegame.online/slope-game.embed"
   },
   {
     "id": "tunnel-rush",
     "name": "Tunnel Rush",
-    "description": "Fast-paced geometric obstacle dodger.",
+    "category": "action",
+    "description": "Fast-paced geometric obstacle dodger in a neon tunnel.",
     "thumbnail": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=400&h=250&fit=crop",
     "iframeUrl": "https://tunnelrush.org/tunnel-rush.embed"
   },
   {
+    "id": "geometry-dash",
+    "name": "Geometry Dash",
+    "category": "action",
+    "description": "Jump and fly through danger in this rhythm-based platformer.",
+    "thumbnail": "https://images.unsplash.com/photo-1611996575749-79a3a250f948?w=400&h=250&fit=crop",
+    "iframeUrl": "https://geometrydashlite.io/game.embed"
+  },
+  {
+    "id": "subway-surfers",
+    "name": "Subway Surfers",
+    "category": "action",
+    "description": "Sprint through the subway, dodge trains, collect coins.",
+    "thumbnail": "https://images.unsplash.com/photo-1579373903781-fd5c0c30c4cd?w=400&h=250&fit=crop",
+    "iframeUrl": "https://poki.com/en/g/subway-surfers"
+  },
+  {
+    "id": "temple-run",
+    "name": "Temple Run 2",
+    "category": "action",
+    "description": "Escape the temple and run as far as you can from the monster.",
+    "thumbnail": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=400&h=250&fit=crop",
+    "iframeUrl": "https://poki.com/en/g/temple-run-2"
+  },
+  {
     "id": "1v1-lol",
     "name": "1v1.LOL",
-    "description": "Build and fight in this competitive shooter.",
+    "category": "multiplayer",
+    "description": "Build and fight in this competitive online shooter.",
     "thumbnail": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=400&h=250&fit=crop",
     "iframeUrl": "https://1v1.lol/"
   },
   {
-    "id": "cookie-clicker",
-    "name": "Cookie Clicker",
-    "description": "The classic incremental idle game.",
-    "thumbnail": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=400&h=250&fit=crop",
-    "iframeUrl": "https://orteil.dashnet.org/cookieclicker/"
+    "id": "krunker",
+    "name": "Krunker.io",
+    "category": "multiplayer",
+    "description": "Blocky multiplayer first-person shooter right in your browser.",
+    "thumbnail": "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=400&h=250&fit=crop",
+    "iframeUrl": "https://krunker.io/"
+  },
+  {
+    "id": "slither-io",
+    "name": "Slither.io",
+    "category": "multiplayer",
+    "description": "Grow your snake by eating orbs and outmaneuver hundreds of players.",
+    "thumbnail": "https://images.unsplash.com/photo-1573870111879-a360748a90da?w=400&h=250&fit=crop",
+    "iframeUrl": "https://slither.io/"
+  },
+  {
+    "id": "paper-io",
+    "name": "Paper.io 2",
+    "category": "multiplayer",
+    "description": "Capture territory and eliminate opponents in this io game.",
+    "thumbnail": "https://images.unsplash.com/photo-1531525645387-7f14be1bdbbd?w=400&h=250&fit=crop",
+    "iframeUrl": "https://paper-io.com/"
+  },
+  {
+    "id": "diep-io",
+    "name": "Diep.io",
+    "category": "multiplayer",
+    "description": "Upgrade your tank and destroy others in this browser arena game.",
+    "thumbnail": "https://images.unsplash.com/photo-1464802686167-b939a6910659?w=400&h=250&fit=crop",
+    "iframeUrl": "https://diep.io/"
+  },
+  {
+    "id": "2048",
+    "name": "2048",
+    "category": "puzzle",
+    "description": "Slide numbered tiles and combine them to reach the 2048 tile.",
+    "thumbnail": "https://images.unsplash.com/photo-1606167668584-78701c57f13d?w=400&h=250&fit=crop",
+    "iframeUrl": "https://play2048.co/"
+  },
+  {
+    "id": "minesweeper",
+    "name": "Minesweeper",
+    "category": "puzzle",
+    "description": "The classic Windows puzzle game. Clear the board without hitting mines.",
+    "thumbnail": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=250&fit=crop",
+    "iframeUrl": "https://minesweeper.online/"
+  },
+  {
+    "id": "sudoku",
+    "name": "Sudoku",
+    "category": "puzzle",
+    "description": "Fill every row, column, and box with digits 1-9.",
+    "thumbnail": "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&h=250&fit=crop",
+    "iframeUrl": "https://sudoku.com/"
+  },
+  {
+    "id": "chess",
+    "name": "Chess",
+    "category": "puzzle",
+    "description": "The timeless game of strategy. Play against AI or friends online.",
+    "thumbnail": "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=400&h=250&fit=crop",
+    "iframeUrl": "https://www.chess.com/play/computer"
   },
   {
     "id": "retro-bowl",
     "name": "Retro Bowl",
-    "description": "8-bit American football management.",
+    "category": "sports",
+    "description": "8-bit American football management and gameplay.",
     "thumbnail": "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?w=400&h=250&fit=crop",
     "iframeUrl": "https://game316009.konggames.com/game.html"
   },
   {
-    "id": "geometry-dash",
-    "name": "Geometry Dash",
-    "description": "Jump and fly your way through danger!",
-    "thumbnail": "https://images.unsplash.com/photo-1611996575749-79a3a250f948?w=400&h=250&fit=crop",
-    "iframeUrl": "https://geometrydashlite.io/game.embed"
+    "id": "basketball-stars",
+    "name": "Basketball Stars",
+    "category": "sports",
+    "description": "1v1 basketball showdowns against players worldwide.",
+    "thumbnail": "https://images.unsplash.com/photo-1546519638-68e109498ffc?w=400&h=250&fit=crop",
+    "iframeUrl": "https://www.basketball-stars.org/"
+  },
+  {
+    "id": "head-soccer",
+    "name": "Head Soccer",
+    "category": "sports",
+    "description": "Wacky physics-based soccer with giant-headed players.",
+    "thumbnail": "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=400&h=250&fit=crop",
+    "iframeUrl": "https://www.head-soccer.com/game/"
+  },
+  {
+    "id": "cookie-clicker",
+    "name": "Cookie Clicker",
+    "category": "idle",
+    "description": "The classic incremental idle game. Click your way to cookie dominance.",
+    "thumbnail": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=400&h=250&fit=crop",
+    "iframeUrl": "https://orteil.dashnet.org/cookieclicker/"
+  },
+  {
+    "id": "adventure-capitalist",
+    "name": "AdVenture Capitalist",
+    "category": "idle",
+    "description": "Start a lemonade stand, work your way up to world domination.",
+    "thumbnail": "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=400&h=250&fit=crop",
+    "iframeUrl": "https://www.kongregate.com/games/HyperHippoGames/adventure-capitalist"
+  },
+  {
+    "id": "pacman",
+    "name": "Pac-Man",
+    "category": "classic",
+    "description": "The iconic arcade legend. Eat dots, dodge ghosts.",
+    "thumbnail": "https://images.unsplash.com/photo-1627856013091-fed6e4f8abff?w=400&h=250&fit=crop",
+    "iframeUrl": "https://freepacman.org/"
+  },
+  {
+    "id": "tetris",
+    "name": "Tetris",
+    "category": "classic",
+    "description": "The legendary block-stacking puzzle game that started it all.",
+    "thumbnail": "https://images.unsplash.com/photo-1585620385456-4759f9b5c7d9?w=400&h=250&fit=crop",
+    "iframeUrl": "https://tetris.com/play-tetris"
+  },
+  {
+    "id": "snake",
+    "name": "Snake",
+    "category": "classic",
+    "description": "Grow your snake, collect food, don't eat yourself.",
+    "thumbnail": "https://images.unsplash.com/photo-1520209268518-aec60b8bb5ca?w=400&h=250&fit=crop",
+    "iframeUrl": "https://playsnake.org/"
   }
 ]
