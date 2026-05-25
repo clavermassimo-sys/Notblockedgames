@@ -2,6 +2,7 @@
   {
     "id": "tetris-gd",
     "name": "Tetris",
+    "category": "Puzzle",
     "description": "The classic block-stacking puzzle game. Clear lines to score points!",
     "thumbnail": "https://img.gamedistribution.com/647536adcfa040668029eae70c72ce33-512x512.jpeg",
     "iframeUrl": "https://html5.gamedistribution.com/647536adcfa040668029eae70c72ce33/"
@@ -9,6 +10,7 @@
   {
     "id": "helix-jump",
     "name": "Helix Jump",
+    "category": "Arcade",
     "description": "Guide a bouncing ball down a twisting helix tower. Avoid the colored tiles!",
     "thumbnail": "https://picsum.photos/seed/helixjump/400/250",
     "iframeUrl": "https://html5.gamedistribution.com/544cf55c6ad44a3299099e813f7f5a9d/"
@@ -16,6 +18,7 @@
   {
     "id": "moto-x3m",
     "name": "Moto X3M",
+    "category": "Racing",
     "description": "Race your motorbike through 25 challenging obstacle-filled levels.",
     "thumbnail": "https://picsum.photos/seed/motox3m/400/250",
     "iframeUrl": "https://html5.gamedistribution.com/5b0abd4c0faa4f5eb190a9a16d5a1b4c/"
@@ -23,6 +26,7 @@
   {
     "id": "minesweeper",
     "name": "Minesweeper",
+    "category": "Puzzle",
     "description": "Clear the minefield using number clues — the classic Microsoft edition.",
     "thumbnail": "https://img.gamedistribution.com/fcc8df3c59264091988cf362480ae62d-512x512.jpeg",
     "iframeUrl": "https://html5.gamedistribution.com/fcc8df3c59264091988cf362480ae62d/"
@@ -30,6 +34,7 @@
   {
     "id": "checkers",
     "name": "Checkers",
+    "category": "Strategy",
     "description": "Classic draughts board game against the computer or a friend.",
     "thumbnail": "https://img.gamedistribution.com/134db518698b45bc80e27e466b14345b-512x512.jpeg",
     "iframeUrl": "https://html5.gamedistribution.com/134db518698b45bc80e27e466b14345b/"
@@ -37,6 +42,7 @@
   {
     "id": "slope-ball",
     "name": "Slope",
+    "category": "Arcade",
     "description": "Roll a ball down an endless neon slope — dodge obstacles and survive.",
     "thumbnail": "https://img.gamedistribution.com/8591784201f445788946a1aaff65b11c-512x512.jpeg",
     "iframeUrl": "https://html5.gamedistribution.com/8591784201f445788946a1aaff65b11c/"
@@ -44,6 +50,7 @@
   {
     "id": "2048",
     "name": "2048",
+    "category": "Puzzle",
     "description": "Slide numbered tiles on a grid and combine them to reach 2048.",
     "thumbnail": "https://picsum.photos/seed/2048game/400/250",
     "iframeUrl": "https://gabrielecirulli.github.io/2048/"
@@ -51,6 +58,7 @@
   {
     "id": "master-chess",
     "name": "Chess",
+    "category": "Strategy",
     "description": "Full-featured chess against an AI — multiple difficulty levels.",
     "thumbnail": "https://img.gamedistribution.com/b2a3398e327b4f6da665759d6730aab4-512x512.jpeg",
     "iframeUrl": "https://html5.gamedistribution.com/b2a3398e327b4f6da665759d6730aab4/"
@@ -58,6 +66,7 @@
   {
     "id": "vex-9",
     "name": "Vex 9",
+    "category": "Action",
     "description": "Control a stickman athlete through treacherous platformer levels.",
     "thumbnail": "https://picsum.photos/seed/vex9/400/250",
     "iframeUrl": "https://html5.gamedistribution.com/8d034584a63642dcb89fa3d24ed6e1b1/"
@@ -65,6 +74,7 @@
   {
     "id": "impostor-io",
     "name": "Impostor.io",
+    "category": "IO",
     "description": "Among Us-style arena — become the superior life form by defeating others.",
     "thumbnail": "https://picsum.photos/seed/impostor/400/250",
     "iframeUrl": "https://html5.gamedistribution.com/f2030313e0de4fafbb5580154e95e414/"
@@ -72,6 +82,7 @@
   {
     "id": "pac-xon",
     "name": "Pac-Xon",
+    "category": "Arcade",
     "description": "Pac-Man meets Xonix — fill the board while dodging ghosts.",
     "thumbnail": "https://picsum.photos/seed/pacxon/400/250",
     "iframeUrl": "https://html5.gamedistribution.com/210802df55454737b3ef7f901c0de8d3/"
@@ -79,6 +90,7 @@
   {
     "id": "bubble-shooter",
     "name": "Bubble Shooter",
+    "category": "Casual",
     "description": "Aim and shoot bubbles to match colors and clear the board.",
     "thumbnail": "https://picsum.photos/seed/bubbleshooter/400/250",
     "iframeUrl": "https://html5.gamedistribution.com/27673bc45d2e4b27b7cd24e422f7c257/"
@@ -86,6 +98,7 @@
   {
     "id": "microsoft-mahjong",
     "name": "Mahjong",
+    "category": "Puzzle",
     "description": "Match pairs of tiles to clear the board in this relaxing tile puzzle.",
     "thumbnail": "https://picsum.photos/seed/mahjong/400/250",
     "iframeUrl": "https://html5.gamedistribution.com/46e4207f29ca4de1affc5596be40f7f0/"
@@ -93,6 +106,7 @@
   {
     "id": "eg-bus-subway",
     "name": "Bus Subway Run",
+    "category": "Arcade",
     "description": "Endless runner — slide and jump to dodge obstacles in the subway.",
     "thumbnail": "https://picsum.photos/seed/subwayrun/400/250",
     "iframeUrl": "https://html5.gamedistribution.com/8baa45aabd504c1ab7a6c4ee9b1a336f/"
@@ -100,6 +114,7 @@
   {
     "id": "stickman-fights",
     "name": "Stickman Fights",
+    "category": "Action",
     "description": "Fast-paced stickman combat in arena-style battle maps.",
     "thumbnail": "https://picsum.photos/seed/stickmanfights/400/250",
     "iframeUrl": "https://html5.gamedistribution.com/44d74fbccd244c71845b47ebb0fb3fe6/"
@@ -107,6 +122,7 @@
   {
     "id": "alien-invaders",
     "name": "Alien Invaders",
+    "category": "Action",
     "description": "Pilot a UFO and destroy waves of enemy aliens — Space Invaders style.",
     "thumbnail": "https://picsum.photos/seed/alieninvaders/400/250",
     "iframeUrl": "https://html5.gamedistribution.com/5b7f40083c8a4b05a21d23ad493f1ab0/"
@@ -114,6 +130,7 @@
   {
     "id": "scratch-snake",
     "name": "Snake",
+    "category": "Arcade",
     "description": "Eat food, grow longer, and don't hit yourself or the walls.",
     "thumbnail": "https://cdn2.scratch.mit.edu/get_image/project/92745681_480x360.png",
     "iframeUrl": "https://scratch.mit.edu/projects/92745681/embed"
@@ -121,6 +138,7 @@
   {
     "id": "scratch-pacman",
     "name": "Pac-Man",
+    "category": "Arcade",
     "description": "Eat all the dots and dodge ghosts in this Scratch Pac-Man remake.",
     "thumbnail": "https://cdn2.scratch.mit.edu/get_image/project/19694902_480x360.png",
     "iframeUrl": "https://scratch.mit.edu/projects/19694902/embed"
@@ -128,6 +146,7 @@
   {
     "id": "scratch-flappy",
     "name": "Flappy Bird",
+    "category": "Casual",
     "description": "Tap to flap through pipes — the iconic one-button game.",
     "thumbnail": "https://cdn2.scratch.mit.edu/get_image/project/116169977_480x360.png",
     "iframeUrl": "https://scratch.mit.edu/projects/116169977/embed"
@@ -135,6 +154,7 @@
   {
     "id": "scratch-appel",
     "name": "Appel Platformer",
+    "category": "Action",
     "description": "griffpatch's legendary Scratch platformer — tight physics and great levels.",
     "thumbnail": "https://cdn2.scratch.mit.edu/get_image/project/60917032_480x360.png",
     "iframeUrl": "https://scratch.mit.edu/projects/60917032/embed"
@@ -142,8 +162,153 @@
   {
     "id": "scratch-tetris",
     "name": "Tetris (Scratch)",
+    "category": "Puzzle",
     "description": "A faithful Scratch Tetris with rotation, wall kicks, and scoring.",
     "thumbnail": "https://cdn2.scratch.mit.edu/get_image/project/2767355_480x360.png",
     "iframeUrl": "https://scratch.mit.edu/projects/2767355/embed"
+  },
+  {
+    "id": "scratch-geometry",
+    "name": "Geometry Dash",
+    "category": "Action",
+    "description": "griffpatch's Geometry Dash Scratch port — rhythm-based platformer perfection.",
+    "thumbnail": "https://cdn2.scratch.mit.edu/get_image/project/50872808_480x360.png",
+    "iframeUrl": "https://scratch.mit.edu/projects/50872808/embed"
+  },
+  {
+    "id": "scratch-among-us",
+    "name": "Among Us",
+    "category": "IO",
+    "description": "Find the impostors before they eliminate the crew — Scratch edition.",
+    "thumbnail": "https://cdn2.scratch.mit.edu/get_image/project/395598974_480x360.png",
+    "iframeUrl": "https://scratch.mit.edu/projects/395598974/embed"
+  },
+  {
+    "id": "scratch-mario",
+    "name": "Super Mario",
+    "category": "Action",
+    "description": "Classic Super Mario Bros platformer faithfully recreated in Scratch.",
+    "thumbnail": "https://cdn2.scratch.mit.edu/get_image/project/88166949_480x360.png",
+    "iframeUrl": "https://scratch.mit.edu/projects/88166949/embed"
+  },
+  {
+    "id": "scratch-dino",
+    "name": "Dino Run",
+    "category": "Arcade",
+    "description": "The Chrome offline dinosaur game — jump over cacti and duck under birds.",
+    "thumbnail": "https://cdn2.scratch.mit.edu/get_image/project/246763541_480x360.png",
+    "iframeUrl": "https://scratch.mit.edu/projects/246763541/embed"
+  },
+  {
+    "id": "scratch-minecraft",
+    "name": "Minecraft 2D",
+    "category": "Casual",
+    "description": "Mine blocks, craft tools, and build structures in this 2D Scratch Minecraft.",
+    "thumbnail": "https://cdn2.scratch.mit.edu/get_image/project/10128407_480x360.png",
+    "iframeUrl": "https://scratch.mit.edu/projects/10128407/embed"
+  },
+  {
+    "id": "drift-boss",
+    "name": "Drift Boss",
+    "category": "Racing",
+    "description": "Tap to drift your car around corners on an endless island track without falling off.",
+    "thumbnail": "https://img.gamedistribution.com/0a8b51e5eaee42e7b4db83ca00afc92e-512x512.jpeg",
+    "iframeUrl": "https://html5.gamedistribution.com/0a8b51e5eaee42e7b4db83ca00afc92e/"
+  },
+  {
+    "id": "tunnel-rush",
+    "name": "Tunnel Rush",
+    "category": "Arcade",
+    "description": "Race through a psychedelic 3D tunnel at blistering speed and dodge every obstacle.",
+    "thumbnail": "https://img.gamedistribution.com/59bbba689dce41ddb2a4fbcbeb855cee-512x512.jpeg",
+    "iframeUrl": "https://html5.gamedistribution.com/rvvASMiM/59bbba689dce41ddb2a4fbcbeb855cee/"
+  },
+  {
+    "id": "color-road",
+    "name": "Color Road",
+    "category": "Casual",
+    "description": "Roll a colored ball down a road collecting same-colored dots while avoiding others.",
+    "thumbnail": "https://img.gamedistribution.com/e9e869c748fe44229e105e378e780a3f-512x512.jpeg",
+    "iframeUrl": "https://html5.gamedistribution.com/e9e869c748fe44229e105e378e780a3f/"
+  },
+  {
+    "id": "stack-ball",
+    "name": "Stack Ball",
+    "category": "Casual",
+    "description": "Smash a bouncing ball through rotating helix platforms — break the dark ones!",
+    "thumbnail": "https://img.gamedistribution.com/a81fd206711b48489fddfa7fd4aab621-512x512.jpeg",
+    "iframeUrl": "https://html5.gamedistribution.com/a81fd206711b48489fddfa7fd4aab621/"
+  },
+  {
+    "id": "parkour-block-5",
+    "name": "Parkour Block 5",
+    "category": "Action",
+    "description": "Jump across suspended platforms in this first-person Minecraft-style parkour challenge.",
+    "thumbnail": "https://img.gamedistribution.com/e18b34214db742c4a97cc80650fc02dd-512x512.jpeg",
+    "iframeUrl": "https://html5.gamedistribution.com/e18b34214db742c4a97cc80650fc02dd/"
+  },
+  {
+    "id": "basketball-stars",
+    "name": "Basketball Stars",
+    "category": "Sports",
+    "description": "Challenge friends or AI in fast 1v1 basketball — pull off dunks and three-pointers.",
+    "thumbnail": "https://img.gamedistribution.com/69d78d071f704fa183d75b4114ae40ec-512x512.jpeg",
+    "iframeUrl": "https://html5.gamedistribution.com/69d78d071f704fa183d75b4114ae40ec/"
+  },
+  {
+    "id": "paper-io-2",
+    "name": "Paper.io 2",
+    "category": "IO",
+    "description": "Capture territory by drawing loops on the board while cutting off rival players.",
+    "thumbnail": "https://img.gamedistribution.com/c5d4966b176246748d6c847103ebfd51-512x512.jpeg",
+    "iframeUrl": "https://html5.gamedistribution.com/c5d4966b176246748d6c847103ebfd51/"
+  },
+  {
+    "id": "among-io",
+    "name": "Among.io",
+    "category": "IO",
+    "description": "Grow your crew by eating food and swallowing smaller rival crewmates in this io arena.",
+    "thumbnail": "https://img.gamedistribution.com/21d4991d0f5448a69b7db62084b7f92d-512x512.jpeg",
+    "iframeUrl": "https://html5.gamedistribution.com/21d4991d0f5448a69b7db62084b7f92d/"
+  },
+  {
+    "id": "rooftop-snipers",
+    "name": "Rooftop Snipers",
+    "category": "Action",
+    "description": "Two-button local multiplayer — shoot your opponent off the rooftop to win the round.",
+    "thumbnail": "https://img.gamedistribution.com/c3a70ae98547407a92ebedca8b79fdfa-512x512.jpeg",
+    "iframeUrl": "https://html5.gamedistribution.com/c3a70ae98547407a92ebedca8b79fdfa/"
+  },
+  {
+    "id": "fireboy-watergirl-1",
+    "name": "Fireboy and Watergirl",
+    "category": "Puzzle",
+    "description": "Guide Fireboy and Watergirl through elemental temple puzzles — solo or co-op.",
+    "thumbnail": "https://img.gamedistribution.com/a55c9cc9c21e4fc683c8c6857f3d0c75-512x512.jpeg",
+    "iframeUrl": "https://html5.gamedistribution.com/a55c9cc9c21e4fc683c8c6857f3d0c75/"
+  },
+  {
+    "id": "geometry-dash-classic",
+    "name": "Geometry Dash Classic",
+    "category": "Action",
+    "description": "Jump and fly to the beat in this rhythm-based platformer with razor-sharp obstacles.",
+    "thumbnail": "https://img.gamedistribution.com/8b65f47d53a6406c8bc767cd1a16a2ec-512x512.jpeg",
+    "iframeUrl": "https://html5.gamedistribution.com/8b65f47d53a6406c8bc767cd1a16a2ec/"
+  },
+  {
+    "id": "moto-x3m-spooky",
+    "name": "Moto X3M Spooky Land",
+    "category": "Racing",
+    "description": "Race Halloween-themed obstacle tracks full of skeletons, spikes, and explosive crashes.",
+    "thumbnail": "https://img.gamedistribution.com/b8a342904608470a9f3382337aca3558-512x512.jpeg",
+    "iframeUrl": "https://html5.gamedistribution.com/b8a342904608470a9f3382337aca3558/"
+  },
+  {
+    "id": "gold-miner",
+    "name": "Gold Miner",
+    "category": "Casual",
+    "description": "Swing your claw to pull up gold nuggets and gems before the timer runs out.",
+    "thumbnail": "https://img.gamedistribution.com/c50d8a3e26c54b66b67f5059eae2d13d-512x512.jpeg",
+    "iframeUrl": "https://html5.gamedistribution.com/c50d8a3e26c54b66b67f5059eae2d13d/"
   }
 ]

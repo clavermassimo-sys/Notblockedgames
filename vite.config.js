@@ -10,10 +10,19 @@ export default defineConfig(({mode}) => {
     plugins: [react(), tailwindcss()],
     define: {
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
+      'process.env.ANTHROPIC_API_KEY': JSON.stringify(env.ANTHROPIC_API_KEY),
     },
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),
+      },
+    },
+    optimizeDeps: {
+      exclude: ['@anthropic-ai/sdk/tools'],
+    },
+    build: {
+      rollupOptions: {
+        external: (id) => id.startsWith('node:'),
       },
     },
     server: {
@@ -23,7 +32,7 @@ export default defineConfig(({mode}) => {
           target: 'https://opensky-network.org',
           changeOrigin: true,
           secure: false,
-          rewrite: (path) => path.replace(/^\/api\/opensky/, '/api'),
+          rewrite: (p) => p.replace(/^\/api\/opensky/, '/api'),
         },
       },
     },
