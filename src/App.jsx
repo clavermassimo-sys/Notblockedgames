@@ -8,12 +8,14 @@ import { ChevronRight, Search } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import gamesData from './data/games.json';
 import Chat from './components/Chat';
+import ATCApp from './components/ATCApp';
 
 export default function App() {
   const [games] = useState(gamesData);
   const [selectedGame, setSelectedGame] = useState(null);
   const [isChatOpen, setIsChatOpen] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
+  const [activeTab, setActiveTab] = useState('library');
 
   const filteredGames = games.filter(game => 
     game.name.toLowerCase().includes(searchQuery.toLowerCase())
@@ -34,19 +36,22 @@ export default function App() {
 
         <div className="flex flex-col items-end gap-4">
           <div className="flex gap-8 mb-1 hidden lg:flex">
-            <button 
-              onClick={() => setSelectedGame(null)}
-              className={`font-bold text-sm tracking-widest uppercase pb-1 transition-all border-b-2 ${!selectedGame ? 'border-neon-yellow opacity-100' : 'border-transparent opacity-40 hover:opacity-100'}`}
+            <button
+              onClick={() => { setActiveTab('library'); setSelectedGame(null); }}
+              className={`font-bold text-sm tracking-widest uppercase pb-1 transition-all border-b-2 ${activeTab === 'library' ? 'border-neon-yellow opacity-100' : 'border-transparent opacity-40 hover:opacity-100'}`}
             >
               Library
+            </button>
+            <button
+              onClick={() => setActiveTab('atc')}
+              className={`font-bold text-sm tracking-widest uppercase pb-1 transition-all border-b-2 ${activeTab === 'atc' ? 'border-neon-yellow opacity-100' : 'border-transparent opacity-40 hover:opacity-100'}`}
+            >
+              ATC
             </button>
             <button className="font-bold opacity-40 hover:opacity-100 transition-opacity text-sm tracking-widest uppercase pb-1">
               New
             </button>
-            <button className="font-bold opacity-40 hover:opacity-100 transition-opacity text-sm tracking-widest uppercase pb-1">
-              Legacy
-            </button>
-            <button 
+            <button
               onClick={() => setIsChatOpen(!isChatOpen)}
               className={`font-bold transition-all text-sm tracking-widest uppercase pb-1 border-b-2 ${isChatOpen ? 'border-neon-yellow opacity-100' : 'border-transparent opacity-40 hover:opacity-100'}`}
             >
@@ -54,21 +59,31 @@ export default function App() {
             </button>
           </div>
           
-          <div className="relative w-64">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3 h-3 text-gray-500" />
-            <input 
-              type="text" 
-              placeholder="SEARCH_DB..."
-              className="w-full bg-black border border-zinc-800 rounded-none py-1.5 pl-8 pr-4 text-xs font-mono focus:outline-none focus:border-neon-yellow transition-colors placeholder:opacity-30"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-            />
-          </div>
+          {activeTab !== 'atc' && (
+            <div className="relative w-64">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3 h-3 text-gray-500" />
+              <input
+                type="text"
+                placeholder="SEARCH_DB..."
+                className="w-full bg-black border border-zinc-800 rounded-none py-1.5 pl-8 pr-4 text-xs font-mono focus:outline-none focus:border-neon-yellow transition-colors placeholder:opacity-30"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+            </div>
+          )}
         </div>
       </header>
 
       <div className="flex-1 flex overflow-hidden">
-        {/* Main Content */}
+        {/* ATC App View */}
+        {activeTab === 'atc' && (
+          <div className="flex-1 overflow-hidden">
+            <ATCApp />
+          </div>
+        )}
+
+        {/* Main Content — Games Library */}
+        {activeTab !== 'atc' && (
         <main className="flex-1 overflow-y-auto overflow-x-hidden p-8 relative scrollbar-thin scrollbar-thumb-zinc-800">
           <AnimatePresence mode="wait">
             {!selectedGame ? (
@@ -147,6 +162,7 @@ export default function App() {
             )}
           </AnimatePresence>
         </main>
+        )}
 
         {/* Chat Sidebar */}
         <AnimatePresence>
