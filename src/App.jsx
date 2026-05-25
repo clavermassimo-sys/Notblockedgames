@@ -3,189 +3,286 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState } from 'react';
-import { ChevronRight, Search } from 'lucide-react';
+import { useState, useMemo } from 'react';
+import { ChevronLeft, Search, Gamepad2, Radio, MessageSquare, Bot, X, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import gamesData from './data/games.json';
 import Chat from './components/Chat';
+import ATCApp from './components/ATCApp';
+import ClaudeChat from './components/ClaudeChat';
+
+const CATEGORIES = ['All', 'Action', 'Arcade', 'Puzzle', 'Strategy', 'Racing', 'IO', 'Sports', 'Casual'];
+
+const CATEGORY_COLORS = {
+  Action: 'text-red-400 border-red-400/30 bg-red-400/10',
+  Arcade: 'text-purple-400 border-purple-400/30 bg-purple-400/10',
+  Puzzle: 'text-blue-400 border-blue-400/30 bg-blue-400/10',
+  Strategy: 'text-amber-400 border-amber-400/30 bg-amber-400/10',
+  Racing: 'text-orange-400 border-orange-400/30 bg-orange-400/10',
+  IO: 'text-green-400 border-green-400/30 bg-green-400/10',
+  Sports: 'text-cyan-400 border-cyan-400/30 bg-cyan-400/10',
+  Casual: 'text-pink-400 border-pink-400/30 bg-pink-400/10',
+};
+
+const NAV_ITEMS = [
+  { id: 'library', icon: Gamepad2, label: 'Games' },
+  { id: 'atc',     icon: Radio,     label: 'ATC Live' },
+  { id: 'chat',    icon: MessageSquare, label: 'Chat' },
+  { id: 'ai',      icon: Bot,        label: 'AI Chat' },
+];
 
 export default function App() {
   const [games] = useState(gamesData);
   const [selectedGame, setSelectedGame] = useState(null);
-  const [isChatOpen, setIsChatOpen] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
+  const [activeTab, setActiveTab] = useState('library');
+  const [activeCategory, setActiveCategory] = useState('All');
 
-  const filteredGames = games.filter(game => 
-    game.name.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const filteredGames = useMemo(() => {
+    return games.filter((g) => {
+      const matchesSearch = g.name.toLowerCase().includes(searchQuery.toLowerCase());
+      const matchesCategory = activeCategory === 'All' || g.category === activeCategory;
+      return matchesSearch && matchesCategory;
+    });
+  }, [games, searchQuery, activeCategory]);
+
+  const handleNavClick = (id) => {
+    setActiveTab(id);
+    if (id !== 'library') setSelectedGame(null);
+  };
 
   return (
-    <div className="min-h-screen bg-app-bg text-white font-sans flex flex-col border-8 border-border-dark selection:bg-neon-yellow selection:text-black">
-      {/* Header */}
-      <header className="h-[140px] border-b-4 border-neon-yellow flex items-end px-10 pb-6 justify-between bg-panel-bg z-50">
-        <div className="cursor-pointer select-none" onClick={() => setSelectedGame(null)}>
-          <h1 className="text-8xl font-black italic tracking-tighter leading-none text-neon-yellow">
-            THE COOL PLACE.
-          </h1>
-          <p className="font-mono text-xs uppercase tracking-[0.3em] opacity-60 mt-2">
-            // Unblocked Games & Social Hub
-          </p>
+    <div className="h-screen bg-app-bg text-white font-sans flex overflow-hidden border-4 border-border-dark selection:bg-neon-yellow selection:text-black">
+      {/* Sidebar Nav */}
+      <nav className="w-16 bg-black border-r border-zinc-800 flex flex-col items-center py-4 gap-1 shrink-0 z-50">
+        {/* Logo */}
+        <div
+          className="w-10 h-10 bg-neon-yellow flex items-center justify-center cursor-pointer mb-4 hover:scale-105 transition-transform"
+          onClick={() => { setActiveTab('library'); setSelectedGame(null); }}
+          title="The Cool Place"
+        >
+          <span className="text-black font-black text-lg italic leading-none">C</span>
         </div>
 
-        <div className="flex flex-col items-end gap-4">
-          <div className="flex gap-8 mb-1 hidden lg:flex">
-            <button 
-              onClick={() => setSelectedGame(null)}
-              className={`font-bold text-sm tracking-widest uppercase pb-1 transition-all border-b-2 ${!selectedGame ? 'border-neon-yellow opacity-100' : 'border-transparent opacity-40 hover:opacity-100'}`}
-            >
-              Library
-            </button>
-            <button className="font-bold opacity-40 hover:opacity-100 transition-opacity text-sm tracking-widest uppercase pb-1">
-              New
-            </button>
-            <button className="font-bold opacity-40 hover:opacity-100 transition-opacity text-sm tracking-widest uppercase pb-1">
-              Legacy
-            </button>
-            <button 
-              onClick={() => setIsChatOpen(!isChatOpen)}
-              className={`font-bold transition-all text-sm tracking-widest uppercase pb-1 border-b-2 ${isChatOpen ? 'border-neon-yellow opacity-100' : 'border-transparent opacity-40 hover:opacity-100'}`}
-            >
-              Chat
-            </button>
-          </div>
-          
-          <div className="relative w-64">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3 h-3 text-gray-500" />
-            <input 
-              type="text" 
-              placeholder="SEARCH_DB..."
-              className="w-full bg-black border border-zinc-800 rounded-none py-1.5 pl-8 pr-4 text-xs font-mono focus:outline-none focus:border-neon-yellow transition-colors placeholder:opacity-30"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-            />
-          </div>
-        </div>
-      </header>
+        {NAV_ITEMS.map(({ id, icon: Icon, label }) => (
+          <button
+            key={id}
+            onClick={() => handleNavClick(id)}
+            title={label}
+            className={`w-12 h-12 flex flex-col items-center justify-center gap-1 rounded transition-all group ${
+              activeTab === id
+                ? 'bg-neon-yellow text-black'
+                : 'text-zinc-500 hover:text-white hover:bg-zinc-900'
+            }`}
+          >
+            <Icon className="w-5 h-5" />
+            <span className="text-[8px] font-bold uppercase tracking-wider leading-none opacity-70">
+              {label.split(' ')[0]}
+            </span>
+          </button>
+        ))}
+      </nav>
 
-      <div className="flex-1 flex overflow-hidden">
-        {/* Main Content */}
-        <main className="flex-1 overflow-y-auto overflow-x-hidden p-8 relative scrollbar-thin scrollbar-thumb-zinc-800">
-          <AnimatePresence mode="wait">
-            {!selectedGame ? (
-              <motion.div 
-                key="grid"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-              >
-                {filteredGames.length > 0 ? (
-                  filteredGames.map((game, idx) => (
-                    <div 
-                      key={game.id}
-                      onClick={() => setSelectedGame(game)}
-                      className="bg-zinc-900 border-2 border-zinc-800 hover:border-neon-yellow p-4 flex flex-col group cursor-pointer transition-all hover:-translate-y-1 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[8px_8px_0px_0px_rgba(224,255,0,0.1)]"
-                    >
-                      <div className="aspect-video bg-zinc-800 mb-3 relative overflow-hidden">
-                        <img 
-                          src={game.thumbnail} 
-                          alt={game.name}
-                          className="w-full h-full object-cover opacity-50 group-hover:opacity-100 transition-all duration-500 grayscale group-hover:grayscale-0"
-                        />
-                        <div className="absolute inset-0 bg-neon-yellow opacity-5 group-hover:opacity-10" />
-                        <div className="absolute bottom-2 left-2 font-mono text-[10px] bg-black px-2 py-1 border border-zinc-800">
-                          {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}_PROJECT
-                        </div>
-                      </div>
-                      <h3 className="font-black text-xl uppercase italic group-hover:text-neon-yellow transition-colors">
-                        {game.name}
-                      </h3>
-                      <p className="text-[10px] uppercase tracking-widest opacity-40 mt-1">
-                        {game.description.split(' ').slice(0, 3).join(' ')} / Arcade
-                      </p>
-                    </div>
-                  ))
-                ) : (
-                  <div className="col-span-full py-20 text-center font-mono text-zinc-500 uppercase tracking-[0.5em]">
-                    [ NO_RESULTS_FOUND ]
-                  </div>
-                )}
-              </motion.div>
-            ) : (
-              <motion.div 
-                key="player"
-                initial={{ opacity: 0, scale: 0.98 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.98 }}
-                className="h-full flex flex-col"
-              >
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-4">
-                    <button 
-                      onClick={() => setSelectedGame(null)}
-                      className="p-2 bg-zinc-900 border border-zinc-800 hover:border-neon-yellow transition-colors"
-                    >
-                      <ChevronRight className="w-5 h-5 rotate-180" />
-                    </button>
-                    <h2 className="text-2xl font-black italic uppercase tracking-tighter text-neon-yellow">
-                      {selectedGame.name}
-                    </h2>
-                  </div>
-                </div>
-                <div className="flex-1 bg-black border-2 border-zinc-800 relative group overflow-hidden">
-                  <div className="absolute top-2 left-2 z-10 opacity-0 group-hover:opacity-100 transition-opacity">
-                     <span className="bg-neon-yellow text-black text-[10px] font-black px-2 py-1 uppercase italic">Live Stream Target</span>
-                  </div>
-                  <iframe 
-                    src={selectedGame.iframeUrl} 
-                    className="w-full h-full border-none"
-                    title={selectedGame.name}
-                    allowFullScreen
-                  />
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </main>
+      {/* Main Content Area */}
+      <div className="flex-1 flex flex-col overflow-hidden">
+        {/* Top Bar — only for library */}
+        {activeTab === 'library' && !selectedGame && (
+          <div className="h-14 border-b border-zinc-800 bg-panel-bg flex items-center px-5 gap-4 shrink-0">
+            <h1 className="text-xl font-black italic tracking-tighter text-neon-yellow whitespace-nowrap">
+              THE COOL PLACE.
+            </h1>
+            <div className="h-5 w-px bg-zinc-800" />
+            {/* Category filters */}
+            <div className="flex gap-1.5 overflow-x-auto scrollbar-none">
+              {CATEGORIES.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setActiveCategory(cat)}
+                  className={`px-3 py-1 text-[10px] font-bold uppercase tracking-widest border whitespace-nowrap transition-all ${
+                    activeCategory === cat
+                      ? 'bg-neon-yellow text-black border-neon-yellow'
+                      : 'border-zinc-700 text-zinc-400 hover:border-zinc-500 hover:text-white'
+                  }`}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
+            {/* Search */}
+            <div className="relative ml-auto w-56 shrink-0">
+              <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 w-3 h-3 text-zinc-500" />
+              <input
+                type="text"
+                placeholder="Search games..."
+                className="w-full bg-black border border-zinc-800 py-1.5 pl-7 pr-3 text-xs font-mono focus:outline-none focus:border-neon-yellow transition-colors placeholder:opacity-30 rounded-none"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+              {searchQuery && (
+                <button
+                  onClick={() => setSearchQuery('')}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 text-zinc-500 hover:text-white"
+                >
+                  <X className="w-3 h-3" />
+                </button>
+              )}
+            </div>
+          </div>
+        )}
 
-        {/* Chat Sidebar */}
-        <AnimatePresence>
-          {isChatOpen && (
-            <motion.aside 
-              initial={{ width: 0, opacity: 0 }}
-              animate={{ width: 340, opacity: 1 }}
-              exit={{ width: 0, opacity: 0 }}
-              className="border-l-4 border-zinc-800 bg-app-bg flex flex-col shadow-2xl relative"
-            >
-              <div className="bg-neon-yellow text-black font-black uppercase italic p-3 text-sm tracking-tighter flex justify-between items-center">
+        {/* Tab Content */}
+        <div className="flex-1 overflow-hidden relative">
+          {/* ATC */}
+          {activeTab === 'atc' && (
+            <div className="absolute inset-0">
+              <ATCApp />
+            </div>
+          )}
+
+          {/* Chat */}
+          {activeTab === 'chat' && (
+            <div className="absolute inset-0 flex flex-col">
+              <div className="bg-neon-yellow text-black font-black uppercase italic p-3 text-sm tracking-tighter flex justify-between items-center shrink-0">
                 <span>Global Lobby Chat</span>
                 <span className="flex items-center gap-2 text-[10px]">
                   <span className="w-2 h-2 rounded-full bg-black animate-pulse" />
                   LIVE
                 </span>
               </div>
-
-              <Chat />
-            </motion.aside>
+              <div className="flex-1 overflow-hidden">
+                <Chat />
+              </div>
+            </div>
           )}
-        </AnimatePresence>
+
+          {/* AI Chat */}
+          {activeTab === 'ai' && (
+            <div className="absolute inset-0">
+              <ClaudeChat />
+            </div>
+          )}
+
+          {/* Games Library */}
+          {activeTab === 'library' && (
+            <div className="absolute inset-0 overflow-y-auto overflow-x-hidden p-6 scrollbar-thin scrollbar-thumb-zinc-800">
+              <AnimatePresence mode="wait">
+                {!selectedGame ? (
+                  <motion.div
+                    key="grid"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                  >
+                    {filteredGames.length > 0 ? (
+                      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+                        {filteredGames.map((game, idx) => (
+                          <GameCard
+                            key={game.id}
+                            game={game}
+                            idx={idx}
+                            onClick={() => setSelectedGame(game)}
+                          />
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="py-32 text-center font-mono text-zinc-600 uppercase tracking-[0.4em] text-sm">
+                        [ NO_RESULTS_FOUND ]
+                      </div>
+                    )}
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="player"
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0 }}
+                    className="h-full flex flex-col"
+                    style={{ height: 'calc(100vh - 3.5rem - 2rem)' }}
+                  >
+                    <div className="flex items-center gap-3 mb-4">
+                      <button
+                        onClick={() => setSelectedGame(null)}
+                        className="flex items-center gap-1.5 text-zinc-500 hover:text-white transition-colors text-xs font-mono uppercase tracking-widest"
+                      >
+                        <ChevronLeft className="w-4 h-4" />
+                        Back
+                      </button>
+                      <div className="h-4 w-px bg-zinc-800" />
+                      <h2 className="text-lg font-black italic uppercase tracking-tight text-neon-yellow">
+                        {selectedGame.name}
+                      </h2>
+                      {selectedGame.category && (
+                        <span className={`text-[9px] font-bold uppercase tracking-widest border px-2 py-0.5 ${CATEGORY_COLORS[selectedGame.category] || ''}`}>
+                          {selectedGame.category}
+                        </span>
+                      )}
+                      <p className="text-xs text-zinc-500 ml-auto hidden md:block">
+                        {selectedGame.description}
+                      </p>
+                    </div>
+                    <div className="flex-1 bg-black border border-zinc-800 overflow-hidden min-h-0">
+                      <iframe
+                        src={selectedGame.iframeUrl}
+                        className="w-full h-full border-none"
+                        title={selectedGame.name}
+                        allowFullScreen
+                      />
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          )}
+        </div>
       </div>
 
-      {/* Footer */}
-      <footer className="h-12 border-t border-zinc-800 bg-black flex items-center px-10 justify-between font-mono text-[10px] text-zinc-500 uppercase tracking-wider">
-        <div className="flex items-center gap-4">
-          <span className="text-neon-yellow font-bold">THE COOL PLACE //</span>
-          <span>STATUS: <span className="text-green-500 font-bold">ALL SYSTEMS NOMINAL</span></span>
-          <span className="opacity-20">|</span>
-          <span>LOCATION: US-EAST-1</span>
-        </div>
-        <div className="flex gap-6">
-          <span>ACTIVE_SESSIONS: 1,482</span>
-          <span>PING: 24MS</span>
-          <span>ENCRYPTION: AES-256</span>
-          <span className="text-zinc-700">COORD: 40.7128° N, 74.0060° W</span>
-        </div>
-      </footer>
+      {/* Footer status strip */}
+      <div className="hidden" />
     </div>
+  );
+}
+
+function GameCard({ game, idx, onClick }) {
+  const catStyle = CATEGORY_COLORS[game.category] || 'text-zinc-500 border-zinc-700 bg-zinc-900';
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: idx * 0.02, duration: 0.2 }}
+      onClick={onClick}
+      className="group cursor-pointer bg-zinc-950 border border-zinc-800 hover:border-neon-yellow transition-all hover:-translate-y-0.5 flex flex-col overflow-hidden"
+    >
+      {/* Thumbnail */}
+      <div className="aspect-video relative overflow-hidden bg-zinc-900">
+        <img
+          src={game.thumbnail}
+          alt={game.name}
+          className="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 grayscale-[50%] group-hover:grayscale-0"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+        {/* Play overlay */}
+        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+          <div className="bg-neon-yellow text-black font-black text-[10px] uppercase tracking-widest px-3 py-1.5 italic">
+            Play Now
+          </div>
+        </div>
+        {/* Category badge */}
+        {game.category && (
+          <span className={`absolute top-1.5 left-1.5 text-[8px] font-bold uppercase tracking-wider border px-1.5 py-0.5 backdrop-blur-sm ${catStyle}`}>
+            {game.category}
+          </span>
+        )}
+      </div>
+      {/* Info */}
+      <div className="p-2.5">
+        <h3 className="font-black text-sm uppercase italic tracking-tight group-hover:text-neon-yellow transition-colors truncate">
+          {game.name}
+        </h3>
+        <p className="text-[9px] text-zinc-600 mt-0.5 line-clamp-1">
+          {game.description.split(' ').slice(0, 6).join(' ')}...
+        </p>
+      </div>
+    </motion.div>
   );
 }
