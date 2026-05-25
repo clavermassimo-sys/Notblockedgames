@@ -1,44 +1,149 @@
 [
   {
-    "id": "slope",
+    "id": "tetris-gd",
+    "name": "Tetris",
+    "description": "The classic block-stacking puzzle game. Clear lines to score points!",
+    "thumbnail": "https://img.gamedistribution.com/647536adcfa040668029eae70c72ce33-512x512.jpeg",
+    "iframeUrl": "https://html5.gamedistribution.com/647536adcfa040668029eae70c72ce33/"
+  },
+  {
+    "id": "helix-jump",
+    "name": "Helix Jump",
+    "description": "Guide a bouncing ball down a twisting helix tower. Avoid the colored tiles!",
+    "thumbnail": "https://picsum.photos/seed/helixjump/400/250",
+    "iframeUrl": "https://html5.gamedistribution.com/544cf55c6ad44a3299099e813f7f5a9d/"
+  },
+  {
+    "id": "moto-x3m",
+    "name": "Moto X3M",
+    "description": "Race your motorbike through 25 challenging obstacle-filled levels.",
+    "thumbnail": "https://picsum.photos/seed/motox3m/400/250",
+    "iframeUrl": "https://html5.gamedistribution.com/5b0abd4c0faa4f5eb190a9a16d5a1b4c/"
+  },
+  {
+    "id": "minesweeper",
+    "name": "Minesweeper",
+    "description": "Clear the minefield using number clues — the classic Microsoft edition.",
+    "thumbnail": "https://img.gamedistribution.com/fcc8df3c59264091988cf362480ae62d-512x512.jpeg",
+    "iframeUrl": "https://html5.gamedistribution.com/fcc8df3c59264091988cf362480ae62d/"
+  },
+  {
+    "id": "checkers",
+    "name": "Checkers",
+    "description": "Classic draughts board game against the computer or a friend.",
+    "thumbnail": "https://img.gamedistribution.com/134db518698b45bc80e27e466b14345b-512x512.jpeg",
+    "iframeUrl": "https://html5.gamedistribution.com/134db518698b45bc80e27e466b14345b/"
+  },
+  {
+    "id": "slope-ball",
     "name": "Slope",
-    "description": "Navigate a ball through a 3D course.",
-    "thumbnail": "https://images.unsplash.com/photo-1614294149010-950b698f72c0?w=400&h=250&fit=crop",
-    "iframeUrl": "https://slopegame.online/slope-game.embed"
+    "description": "Roll a ball down an endless neon slope — dodge obstacles and survive.",
+    "thumbnail": "https://img.gamedistribution.com/8591784201f445788946a1aaff65b11c-512x512.jpeg",
+    "iframeUrl": "https://html5.gamedistribution.com/8591784201f445788946a1aaff65b11c/"
   },
   {
-    "id": "tunnel-rush",
-    "name": "Tunnel Rush",
-    "description": "Fast-paced geometric obstacle dodger.",
-    "thumbnail": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=400&h=250&fit=crop",
-    "iframeUrl": "https://tunnelrush.org/tunnel-rush.embed"
+    "id": "2048",
+    "name": "2048",
+    "description": "Slide numbered tiles on a grid and combine them to reach 2048.",
+    "thumbnail": "https://picsum.photos/seed/2048game/400/250",
+    "iframeUrl": "https://gabrielecirulli.github.io/2048/"
   },
   {
-    "id": "1v1-lol",
-    "name": "1v1.LOL",
-    "description": "Build and fight in this competitive shooter.",
-    "thumbnail": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=400&h=250&fit=crop",
-    "iframeUrl": "https://1v1.lol/"
+    "id": "master-chess",
+    "name": "Chess",
+    "description": "Full-featured chess against an AI — multiple difficulty levels.",
+    "thumbnail": "https://img.gamedistribution.com/b2a3398e327b4f6da665759d6730aab4-512x512.jpeg",
+    "iframeUrl": "https://html5.gamedistribution.com/b2a3398e327b4f6da665759d6730aab4/"
   },
   {
-    "id": "cookie-clicker",
-    "name": "Cookie Clicker",
-    "description": "The classic incremental idle game.",
-    "thumbnail": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=400&h=250&fit=crop",
-    "iframeUrl": "https://orteil.dashnet.org/cookieclicker/"
+    "id": "vex-9",
+    "name": "Vex 9",
+    "description": "Control a stickman athlete through treacherous platformer levels.",
+    "thumbnail": "https://picsum.photos/seed/vex9/400/250",
+    "iframeUrl": "https://html5.gamedistribution.com/8d034584a63642dcb89fa3d24ed6e1b1/"
   },
   {
-    "id": "retro-bowl",
-    "name": "Retro Bowl",
-    "description": "8-bit American football management.",
-    "thumbnail": "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?w=400&h=250&fit=crop",
-    "iframeUrl": "https://game316009.konggames.com/game.html"
+    "id": "impostor-io",
+    "name": "Impostor.io",
+    "description": "Among Us-style arena — become the superior life form by defeating others.",
+    "thumbnail": "https://picsum.photos/seed/impostor/400/250",
+    "iframeUrl": "https://html5.gamedistribution.com/f2030313e0de4fafbb5580154e95e414/"
   },
   {
-    "id": "geometry-dash",
-    "name": "Geometry Dash",
-    "description": "Jump and fly your way through danger!",
-    "thumbnail": "https://images.unsplash.com/photo-1611996575749-79a3a250f948?w=400&h=250&fit=crop",
-    "iframeUrl": "https://geometrydashlite.io/game.embed"
+    "id": "pac-xon",
+    "name": "Pac-Xon",
+    "description": "Pac-Man meets Xonix — fill the board while dodging ghosts.",
+    "thumbnail": "https://picsum.photos/seed/pacxon/400/250",
+    "iframeUrl": "https://html5.gamedistribution.com/210802df55454737b3ef7f901c0de8d3/"
+  },
+  {
+    "id": "bubble-shooter",
+    "name": "Bubble Shooter",
+    "description": "Aim and shoot bubbles to match colors and clear the board.",
+    "thumbnail": "https://picsum.photos/seed/bubbleshooter/400/250",
+    "iframeUrl": "https://html5.gamedistribution.com/27673bc45d2e4b27b7cd24e422f7c257/"
+  },
+  {
+    "id": "microsoft-mahjong",
+    "name": "Mahjong",
+    "description": "Match pairs of tiles to clear the board in this relaxing tile puzzle.",
+    "thumbnail": "https://picsum.photos/seed/mahjong/400/250",
+    "iframeUrl": "https://html5.gamedistribution.com/46e4207f29ca4de1affc5596be40f7f0/"
+  },
+  {
+    "id": "eg-bus-subway",
+    "name": "Bus Subway Run",
+    "description": "Endless runner — slide and jump to dodge obstacles in the subway.",
+    "thumbnail": "https://picsum.photos/seed/subwayrun/400/250",
+    "iframeUrl": "https://html5.gamedistribution.com/8baa45aabd504c1ab7a6c4ee9b1a336f/"
+  },
+  {
+    "id": "stickman-fights",
+    "name": "Stickman Fights",
+    "description": "Fast-paced stickman combat in arena-style battle maps.",
+    "thumbnail": "https://picsum.photos/seed/stickmanfights/400/250",
+    "iframeUrl": "https://html5.gamedistribution.com/44d74fbccd244c71845b47ebb0fb3fe6/"
+  },
+  {
+    "id": "alien-invaders",
+    "name": "Alien Invaders",
+    "description": "Pilot a UFO and destroy waves of enemy aliens — Space Invaders style.",
+    "thumbnail": "https://picsum.photos/seed/alieninvaders/400/250",
+    "iframeUrl": "https://html5.gamedistribution.com/5b7f40083c8a4b05a21d23ad493f1ab0/"
+  },
+  {
+    "id": "scratch-snake",
+    "name": "Snake",
+    "description": "Eat food, grow longer, and don't hit yourself or the walls.",
+    "thumbnail": "https://cdn2.scratch.mit.edu/get_image/project/92745681_480x360.png",
+    "iframeUrl": "https://scratch.mit.edu/projects/92745681/embed"
+  },
+  {
+    "id": "scratch-pacman",
+    "name": "Pac-Man",
+    "description": "Eat all the dots and dodge ghosts in this Scratch Pac-Man remake.",
+    "thumbnail": "https://cdn2.scratch.mit.edu/get_image/project/19694902_480x360.png",
+    "iframeUrl": "https://scratch.mit.edu/projects/19694902/embed"
+  },
+  {
+    "id": "scratch-flappy",
+    "name": "Flappy Bird",
+    "description": "Tap to flap through pipes — the iconic one-button game.",
+    "thumbnail": "https://cdn2.scratch.mit.edu/get_image/project/116169977_480x360.png",
+    "iframeUrl": "https://scratch.mit.edu/projects/116169977/embed"
+  },
+  {
+    "id": "scratch-appel",
+    "name": "Appel Platformer",
+    "description": "griffpatch's legendary Scratch platformer — tight physics and great levels.",
+    "thumbnail": "https://cdn2.scratch.mit.edu/get_image/project/60917032_480x360.png",
+    "iframeUrl": "https://scratch.mit.edu/projects/60917032/embed"
+  },
+  {
+    "id": "scratch-tetris",
+    "name": "Tetris (Scratch)",
+    "description": "A faithful Scratch Tetris with rotation, wall kicks, and scoring.",
+    "thumbnail": "https://cdn2.scratch.mit.edu/get_image/project/2767355_480x360.png",
+    "iframeUrl": "https://scratch.mit.edu/projects/2767355/embed"
   }
 ]

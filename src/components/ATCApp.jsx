@@ -81,7 +81,12 @@ export default function ATCApp() {
     setIsLoadingFlights(true);
     try {
       const bounds = mapRef.current.getBounds();
-      const url = `https://opensky-network.org/api/states/all?lamin=${bounds.getSouth().toFixed(2)}&lomin=${bounds.getWest().toFixed(2)}&lamax=${bounds.getNorth().toFixed(2)}&lomax=${bounds.getEast().toFixed(2)}`;
+      const lamin = Math.max(-90,  bounds.getSouth()).toFixed(2);
+      const lamax = Math.min( 90,  bounds.getNorth()).toFixed(2);
+      const lomin = Math.max(-180, bounds.getWest()).toFixed(2);
+      const lomax = Math.min( 180, bounds.getEast()).toFixed(2);
+      if (parseFloat(lamin) >= parseFloat(lamax) || parseFloat(lomin) >= parseFloat(lomax)) return;
+      const url = `/api/opensky/states/all?lamin=${lamin}&lomin=${lomin}&lamax=${lamax}&lomax=${lomax}`;
       const res = await fetch(url);
       if (!res.ok) throw new Error('API error');
       const data = await res.json();
@@ -176,6 +181,7 @@ export default function ATCApp() {
       clearInterval(fetchTimerRef.current);
       map.remove();
       mapRef.current = null;
+      markersRef.current = {};
     };
   }, [fetchFlights]);
 
@@ -230,7 +236,7 @@ export default function ATCApp() {
   };
 
   return (
-    <div className="flex h-full bg-[#0A0A0A] text-white overflow-hidden">
+    <div className="flex bg-[#0A0A0A] text-white overflow-hidden" style={{ height: '100%' }}>
       {/* Hidden audio element */}
       <audio
         ref={audioRef}
@@ -242,8 +248,8 @@ export default function ATCApp() {
       />
 
       {/* Map */}
-      <div className="flex-1 relative">
-        <div ref={mapContainerRef} className="w-full h-full" />
+      <div className="flex-1 relative min-w-0" style={{ minHeight: 0 }}>
+        <div ref={mapContainerRef} style={{ width: '100%', height: '100%' }} />
 
         {/* Map overlay: top-left info */}
         <div className="absolute top-3 left-3 z-[1000] flex items-center gap-2 pointer-events-none">
